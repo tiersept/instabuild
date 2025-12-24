@@ -1,32 +1,52 @@
-# `Turborepo` Vite starter
+# Instabuild
 
-This is a community-maintained example. If you experience a problem, please submit a pull request with a fix. GitHub Issues will be closed.
+Add items and pricing to a list.
 
-## Using this example
+## Tech Stack
 
-Run the following command:
+- [React](https://react.dev/) - UI framework
+- [TypeScript](https://www.typescriptlang.org/) - Type safety
+- [Vite](https://vitejs.dev/) - Build tool
+- [Turborepo](https://turbo.build/) - Monorepo
+- [Tailwind CSS](https://tailwindcss.com/) - Styling
+- [Biome](https://biomejs.dev/) - Linting & formatting
+- Chrome Extension - Browser extension platform
+
+## Monorepo Structure
+
+### Apps
+
+- `apps/app-extension` - Chrome extension application
+
+### Packages
+
+- `@repo/ui` - Shared UI component library
+- `@repo/shared` - Shared utilities, types, and adapters
+- `@repo/biome-config` - Shared Biome configuration
+- `@repo/typescript-config` - Shared TypeScript configuration
+
+## Prerequisites
+
+Ensure you have [bun](https://bun.sh/docs/installation) and [turbo](https://turbo.build/repo/docs/getting-started/installation) installed.
+
+## Getting Started
+
+Install dependencies:
 
 ```sh
-npx create-turbo@latest -e with-vite-react
+bun install
 ```
 
-## What's inside?
+Development:
 
-This Turborepo includes the following packages and apps:
+```sh
+turbo run dev
+```
 
-### Apps and Packages
+Build:
 
-- `web`: react [vite](https://vitejs.dev) ts app
-- `@repo/ui`: a stub component library shared by `web` application
-- `@repo/eslint-config`: shared `eslint` configurations
-- `@repo/typescript-config`: `tsconfig.json`s used throughout the monorepo
+```sh
+turbo run build
+```
 
-Each package and app is 100% [TypeScript](https://www.typescriptlang.org/).
-
-### Utilities
-
-This Turborepo has some additional tools already setup for you:
-
-- [TypeScript](https://www.typescriptlang.org/) for static type checking
-- [ESLint](https://eslint.org/) for code linting
-- [Prettier](https://prettier.io) for code formatting
+Build creates a `release.zip` file.

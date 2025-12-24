@@ -1,0 +1,8 @@
+@import "@repo/ui/globals.css";
+
+body {
+  width: 400px;
+  min-height: 300px;
+  margin: 0;
+  padding: 0;
+}
