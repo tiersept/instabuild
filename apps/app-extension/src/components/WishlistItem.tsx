@@ -1,7 +1,7 @@
 import type { WishlistItem as WishlistItemType } from "@repo/shared/types";
 import { formatPrice } from "@repo/shared/utils";
 import { Button } from "@repo/ui/components/ui/button";
-import { Card, CardContent } from "@repo/ui/components/ui/card";
+import { Card, CardContent, CardTitle } from "@repo/ui/components/ui/card";
 
 interface WishlistItemProps {
   item: WishlistItemType;
@@ -21,7 +21,7 @@ export function WishlistItem({ item, onRemove }: WishlistItemProps) {
             />
           )}
           <div className="flex-1 min-w-0">
-            <h3 className="font-semibold text-sm truncate mb-1">{item.name}</h3>
+            <CardTitle>{item.name}</CardTitle>
             <p className="text-lg font-bold text-primary mb-2">
               {formatPrice(item.price)}
             </p>
