@@ -11,7 +11,11 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0  # Fetch full history for turbo --affected
+          fetch-depth: 0
+          fetch-tags: false
+
+      - name: Fetch all branches
+        run: git fetch --no-tags --prune --depth=1 origin +refs/heads/*:refs/remotes/origin/*
 
       - name: Setup Bun
         uses: oven-sh/setup-bun@v2
