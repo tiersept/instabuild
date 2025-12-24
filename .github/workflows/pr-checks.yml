@@ -11,7 +11,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
         with:
-          fetch-depth: 2  # Needed for turbo --affected to detect changes
+          fetch-depth: 0  # Fetch full history for turbo --affected
 
       - name: Setup Bun
         uses: oven-sh/setup-bun@v2
@@ -31,7 +31,10 @@ jobs:
 
       - name: Run lint
         run: bunx turbo run lint --affected
+        env:
+          TURBO_SCM_BASE: ${{ github.event.pull_request.base.ref || 'main' }}
 
       - name: Run tests
         run: bunx turbo run test --affected
-
+        env:
+          TURBO_SCM_BASE: ${{ github.event.pull_request.base.ref || 'main' }}
