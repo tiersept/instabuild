@@ -1,17 +1,17 @@
 import type { WishlistItem } from "@repo/shared/types";
-import { WishlistItem as WishlistItemComponent } from "./WishlistItem";
+import { ListItem as ListItemComponent } from "./list-item";
 
-interface WishlistListProps {
+interface ListProps {
   items: WishlistItem[];
   onRemove: (itemId: string) => void;
 }
 
-export function WishlistList({ items, onRemove }: WishlistListProps) {
+export function List({ items, onRemove }: ListProps) {
   return (
     <div className="space-y-3 mb-4">
       {items.map((item) => (
         // <CardItem key={item.id} />
-        <WishlistItemComponent key={item.id} item={item} onRemove={onRemove} />
+        <ListItemComponent key={item.id} item={item} onRemove={onRemove} />
       ))}
     </div>
   );

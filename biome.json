@@ -8,9 +8,11 @@
     }
   },
   "files": {
-    "ignoreUnknown": false
+    "ignoreUnknown": false,
+    "includes": ["**", "!bun.lock"]
   },
   "formatter": {
+    "enabled": true,
     "lineWidth": 120,
     "indentStyle": "space",
     "indentWidth": 2

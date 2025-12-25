@@ -1,5 +1,5 @@
-import { TotalCost } from "../components/TotalCost";
-import { WishlistList } from "../components/WishlistList";
+import { Footer } from "../components/footer";
+import { List } from "../components/list";
 import { useWishlist } from "../hooks/use-wishlist";
 
 export default function App() {
@@ -37,8 +37,8 @@ export default function App() {
           </div>
         ) : (
           <>
-            <WishlistList items={wishlist} onRemove={removeItem} />
-            <TotalCost items={wishlist} />
+            <List items={wishlist} onRemove={removeItem} />
+            <Footer items={wishlist} />
           </>
         )}
       </main>
