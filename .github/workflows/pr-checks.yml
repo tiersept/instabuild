@@ -7,9 +7,11 @@ on:
 jobs:
   lint-and-test:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
+      - name: Checkout
+        uses: actions/checkout@v5
         with:
           fetch-depth: 0
 
@@ -35,7 +37,12 @@ jobs:
             turbo-${{ runner.os }}-
 
       - name: Run lint
-        run: bunx turbo run lint --affected
+        run: bunx turbo run lint:ci --affected
+        env:
+          TURBO_SCM_BASE: ${{ github.event.pull_request.base.ref || 'main' }}
+
+      - name: Check types
+        run: bunx turbo run check-types --affected
         env:
           TURBO_SCM_BASE: ${{ github.event.pull_request.base.ref || 'main' }}
 

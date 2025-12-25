@@ -10,6 +10,7 @@
   "license": "MIT",
   "scripts": {
     "lint": "biome check --write",
+    "lint:ci": "biome ci",
     "check-types": "tsc --noEmit"
   },
   "dependencies": {
