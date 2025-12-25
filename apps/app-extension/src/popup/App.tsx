@@ -1,5 +1,5 @@
-import { TotalCost } from "../components/TotalCost";
-import { WishlistList } from "../components/WishlistList";
+import { Footer } from "../components/footer";
+import { List } from "../components/list";
 import { useWishlist } from "../hooks/use-wishlist";
 
 export default function App() {
@@ -10,13 +10,7 @@ export default function App() {
       <div className="flex flex-col h-full min-h-[300px]">
         <header className="bg-primary text-primary-foreground p-4">
           Loading...
-          {/* <Skeleton className="h-7 w-32 bg-primary-foreground/20" /> */}
         </header>
-        {/* <main className="flex-1 overflow-y-auto p-4 space-y-3">
-          <Skeleton className="h-24 w-full" />
-          <Skeleton className="h-24 w-full" />
-          <Skeleton className="h-24 w-full" />
-        </main> */}
       </div>
     );
   }
@@ -37,8 +31,8 @@ export default function App() {
           </div>
         ) : (
           <>
-            <WishlistList items={wishlist} onRemove={removeItem} />
-            <TotalCost items={wishlist} />
+            <List items={wishlist} onRemove={removeItem} />
+            <Footer items={wishlist} />
           </>
         )}
       </main>

@@ -2,11 +2,11 @@ import type { WishlistItem } from "@repo/shared/types";
 import { formatPrice } from "@repo/shared/utils";
 import { Separator } from "@repo/ui/components/ui/separator";
 
-interface TotalCostProps {
+interface FooterProps {
   items: WishlistItem[];
 }
 
-export function TotalCost({ items }: TotalCostProps) {
+export function Footer({ items }: FooterProps) {
   const total = items.reduce((sum, item) => sum + item.price, 0);
 
   return (

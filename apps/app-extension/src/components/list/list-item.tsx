@@ -3,12 +3,12 @@ import { formatPrice } from "@repo/shared/utils";
 import { Button } from "@repo/ui/components/ui/button";
 import { Card, CardContent, CardTitle } from "@repo/ui/components/ui/card";
 
-interface WishlistItemProps {
+interface ListItemProps {
   item: WishlistItemType;
   onRemove: (itemId: string) => void;
 }
 
-export function WishlistItem({ item, onRemove }: WishlistItemProps) {
+export function ListItem({ item, onRemove }: ListItemProps) {
   return (
     <Card size="sm">
       <CardContent className="p-3">
@@ -38,7 +38,7 @@ export function WishlistItem({ item, onRemove }: WishlistItemProps) {
             variant="ghost"
             size="icon-xs"
             onClick={() => onRemove(item.id)}
-            className="text-destructive hover:text-destructive hover:bg-destructive/10 shrink-0"
+            className="text-destructive hover:text-destructive hover:bg-destructive/10 shrink-0 hover:cursor-pointer"
             title="Remove from wishlist"
             aria-label="Remove from wishlist"
           >
