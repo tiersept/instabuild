@@ -2,6 +2,12 @@
 
 Add items and pricing to a list.
 
+## TODO
+
+- [] Add husky with conventional commits
+- [] Fix labeler
+- []
+
 ## Monorepo Structure
 
 ### Apps
