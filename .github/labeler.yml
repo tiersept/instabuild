@@ -1,42 +1,42 @@
 # Auto-label PRs based on changed files
 extension:
-  - apps/app-extension/**
+  - 'apps/app-extension/**'
 
 app:
-  - apps/app-extension/**
+  - 'apps/app-extension/**'
 
 ui:
-  - packages/ui/**
+  - 'packages/ui/**'
 
 package:
-  - packages/ui/**
-  - packages/shared/**
-  - packages/**
+  - 'packages/ui/**'
+  - 'packages/shared/**'
+  - 'packages/**'
 
 shared:
-  - packages/shared/**
+  - 'packages/shared/**'
 
 # Label based on file types
 typescript:
-  - "**/*.ts"
-  - "**/*.tsx"
+  - '**/*.ts'
+  - '**/*.tsx'
 
 react:
-  - "**/*.tsx"
+  - '**/*.tsx'
 
 test:
-  - "**/*.test.ts"
-  - "**/*.test.tsx"
+  - '**/*.test.ts'
+  - '**/*.test.tsx'
 
 # Label for documentation changes
 documentation:
-  - "**/*.md"
+  - '**/*.md'
 
 # Label for CI/CD changes
 ci:
-  - .github/**
+  - '.github/**'
 
 # Label for dependency changes
 dependencies:
-  - "**/package.json"
-  - "**/bun.lock"
+  - '**/package.json'
+  - '**/bun.lock'
