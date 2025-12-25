@@ -15,21 +15,21 @@ packages/**:
   - package
 
 # Label based on file types
-**/*.ts:
+"**/*.ts":
   - typescript
 
-**/*.tsx:
+"**/*.tsx":
   - typescript
   - react
 
-**/*.test.ts:
+"**/*.test.ts":
   - test
 
-**/*.test.tsx:
+"**/*.test.tsx":
   - test
 
 # Label for documentation changes
-**/*.md:
+"**/*.md":
   - documentation
 
 # Label for CI/CD changes
@@ -37,9 +37,8 @@ packages/**:
   - ci
 
 # Label for dependency changes
-**/package.json:
+"**/package.json":
   - dependencies
 
-**/bun.lock:
+"**/bun.lock":
   - dependencies
-
