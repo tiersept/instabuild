@@ -2,16 +2,6 @@
 
 Add items and pricing to a list.
 
-## Tech Stack
-
-- [React](https://react.dev/) - UI framework
-- [TypeScript](https://www.typescriptlang.org/) - Type safety
-- [Vite](https://vitejs.dev/) - Build tool
-- [Turborepo](https://turbo.build/) - Monorepo
-- [Tailwind CSS](https://tailwindcss.com/) - Styling
-- [Biome](https://biomejs.dev/) - Linting & formatting
-- Chrome Extension - Browser extension platform
-
 ## Monorepo Structure
 
 ### Apps
@@ -50,3 +40,13 @@ turbo run build
 ```
 
 Build creates a `release.zip` file.
+
+## Stack
+
+- [React](https://react.dev/) - UI framework
+- [TypeScript](https://www.typescriptlang.org/) - Type safety
+- [Vite](https://vitejs.dev/) - Build tool
+- [Turborepo](https://turbo.build/) - Monorepo
+- [Tailwind CSS](https://tailwindcss.com/) - Styling
+- [Biome](https://biomejs.dev/) - Linting & formatting
+- Chrome Extension - Browser extension platform

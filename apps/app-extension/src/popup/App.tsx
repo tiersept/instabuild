@@ -17,8 +17,8 @@ export default function App() {
 
   return (
     <div className="flex flex-col h-full min-h-[300px]">
-      <header className="bg-primary text-primary-foreground p-4">
-        <h1 className="text-xl font-bold">Wishlist</h1>
+      <header className="bg-neutral-900 text-primary-foreground p-4">
+        <h1>instabuild</h1>
       </header>
       <main className="flex-1 overflow-y-auto p-4">
         {wishlist.length === 0 ? (
