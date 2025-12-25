@@ -49,11 +49,17 @@ export const tweakersAdapter: SiteAdapter = {
 
     // Extract image (optional)
     // Try to get the original high-quality image from the thumbnail data-original attribute
-    const thumbnailElement = document.querySelector("twk-media-gallery .gallery-thumb[data-original]");
+    const thumbnailElement = document.querySelector(
+      "twk-media-gallery .gallery-thumb[data-original]",
+    );
     const imageUrl =
       thumbnailElement?.getAttribute("data-original") ||
-      document.querySelector("twk-media-gallery .gallery-trigger img")?.getAttribute("src") ||
-      document.querySelector("twk-media-gallery .gallery-thumb img")?.getAttribute("src") ||
+      document
+        .querySelector("twk-media-gallery .gallery-trigger img")
+        ?.getAttribute("src") ||
+      document
+        .querySelector("twk-media-gallery .gallery-thumb img")
+        ?.getAttribute("src") ||
       undefined;
 
     return {

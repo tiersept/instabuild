@@ -7,11 +7,18 @@ on:
 jobs:
   lint-and-test:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
+      - name: Checkout
+        uses: actions/checkout@v5
         with:
-          fetch-depth: 2  # Needed for turbo --affected to detect changes
+          fetch-depth: 0
+
+      - name: Fetch base branch
+        run: |
+          BASE_REF="${{ github.event.pull_request.base.ref || 'main' }}"
+          git fetch origin $BASE_REF:$BASE_REF
 
       - name: Setup Bun
         uses: oven-sh/setup-bun@v2
@@ -30,8 +37,16 @@ jobs:
             turbo-${{ runner.os }}-
 
       - name: Run lint
-        run: bunx turbo run lint --affected
+        run: bunx turbo run lint:ci --affected
+        env:
+          TURBO_SCM_BASE: ${{ github.event.pull_request.base.ref || 'main' }}
+
+      - name: Check types
+        run: bunx turbo run check-types --affected
+        env:
+          TURBO_SCM_BASE: ${{ github.event.pull_request.base.ref || 'main' }}
 
       - name: Run tests
         run: bunx turbo run test --affected
-
+        env:
+          TURBO_SCM_BASE: ${{ github.event.pull_request.base.ref || 'main' }}

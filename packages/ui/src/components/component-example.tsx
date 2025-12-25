@@ -78,11 +78,7 @@ import {
   DropdownMenuSubTrigger,
   DropdownMenuTrigger,
 } from "@repo/ui/components/ui/dropdown-menu";
-import {
-  Field,
-  FieldGroup,
-  FieldLabel,
-} from "@repo/ui/components/ui/field";
+import { Field, FieldGroup, FieldLabel } from "@repo/ui/components/ui/field";
 import { Input } from "@repo/ui/components/ui/input";
 import {
   Select,
