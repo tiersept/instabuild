@@ -1,0 +1,45 @@
+# Auto-label PRs based on changed files
+apps/app-extension/**:
+  - extension
+  - app
+
+packages/ui/**:
+  - ui
+  - package
+
+packages/shared/**:
+  - shared
+  - package
+
+packages/**:
+  - package
+
+# Label based on file types
+**/*.ts:
+  - typescript
+
+**/*.tsx:
+  - typescript
+  - react
+
+**/*.test.ts:
+  - test
+
+**/*.test.tsx:
+  - test
+
+# Label for documentation changes
+**/*.md:
+  - documentation
+
+# Label for CI/CD changes
+.github/**:
+  - ci
+
+# Label for dependency changes
+**/package.json:
+  - dependencies
+
+**/bun.lock:
+  - dependencies
+
