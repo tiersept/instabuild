@@ -1,42 +1,57 @@
 # Auto-label PRs based on changed files
 extension:
-  - 'apps/app-extension/**'
+  - changed-files:
+      - any-glob-to-any-file: 'apps/app-extension/**'
 
 app:
-  - 'apps/app-extension/**'
+  - changed-files:
+      - any-glob-to-any-file: 'apps/app-extension/**'
 
 ui:
-  - 'packages/ui/**'
+  - changed-files:
+      - any-glob-to-any-file: 'packages/ui/**'
 
 package:
-  - 'packages/ui/**'
-  - 'packages/shared/**'
-  - 'packages/**'
+  - changed-files:
+      - any-glob-to-any-file:
+          - 'packages/ui/**'
+          - 'packages/shared/**'
+          - 'packages/**'
 
 shared:
-  - 'packages/shared/**'
+  - changed-files:
+      - any-glob-to-any-file: 'packages/shared/**'
 
 # Label based on file types
 typescript:
-  - '**/*.ts'
-  - '**/*.tsx'
+  - changed-files:
+      - any-glob-to-any-file:
+          - '**/*.ts'
+          - '**/*.tsx'
 
 react:
-  - '**/*.tsx'
+  - changed-files:
+      - any-glob-to-any-file: '**/*.tsx'
 
 test:
-  - '**/*.test.ts'
-  - '**/*.test.tsx'
+  - changed-files:
+      - any-glob-to-any-file:
+          - '**/*.test.ts'
+          - '**/*.test.tsx'
 
 # Label for documentation changes
 documentation:
-  - '**/*.md'
+  - changed-files:
+      - any-glob-to-any-file: '**/*.md'
 
 # Label for CI/CD changes
 ci:
-  - '.github/**'
+  - changed-files:
+      - any-glob-to-any-file: '.github/**'
 
 # Label for dependency changes
 dependencies:
-  - '**/package.json'
-  - '**/bun.lock'
+  - changed-files:
+      - any-glob-to-any-file:
+          - '**/package.json'
+          - '**/bun.lock'
